@@ -41,6 +41,10 @@ h1 {
     cursor: pointer;
 }
 
+.nav-color {
+    background-color: #4C489E;
+}
+
 .nav-bar {
     display: none;
 }
