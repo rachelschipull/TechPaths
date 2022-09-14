@@ -104,6 +104,10 @@ h1 {
     cursor: pointer;
 }
 
+.card-bg {
+    background-color: #4C489E;
+}
+
 /* Start Styles for the index */
 
 .index-flex-parent {
