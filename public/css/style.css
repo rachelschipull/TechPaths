@@ -88,13 +88,14 @@ h1 {
     text-align: center;
 }
 
-.btn {
+.btn1 {
     text-decoration: none;
     background-color: #ED9AC2;
     color: black;
     padding: 1rem 2rem;
     border: 1px solid black;
     font-weight: 500;
+    border-radius: 5%;
 }
 
 .btn:hover {
@@ -104,9 +105,14 @@ h1 {
     cursor: pointer;
 }
 
-.card-bg {
-    background-color: #4C489E;
+.btn1:hover {
+    background-color: black;
+    color: white;
+    border-radius: 5%;
+    border: 1px solid #4C489E;
+    cursor: pointer;
 }
+
 
 /* Start Styles for the index */
 
