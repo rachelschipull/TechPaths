@@ -1,38 +1,45 @@
 <%- include('partials/header') -%>
-    <main class="bg-dark text-light p-5 text-center text-sm-start">
-        <div class="container">
 
-            <div class="site-logo">
+<main class="container">
+  <div class="row justify-content-center">
+    <section class="col-6 mt-5">
 
-                <img src="images/TechPaths_Transparent.png" alt="Music Rating App Logo">
-    
-                </div>
-
-                <h2 class="title-center">Sign in to your TechPath:</h2>
-
-            <% if (locals.messages.errors) { %>
-                <% messages.errors.forEach( el => { %>
-                    <div class="alert alert-danger"><%= el.msg %></div>
-                <% }) %>    
-            <% } %>
-            <% if (locals.messages.info) { %>
-                <% messages.info.forEach( el => { %>
-                    <div class="alert alert-danger"><%= el.msg %></div>
-                <% }) %>    
-            <% } %>
-            <form action="/login" method="POST" class="form-flex-parent">
-                <div class="form-flex-child">
-                <label for="email">Email</label>
-                <input type="email" name="email">
-                </div>
-                <div class="form-flex-child">
-                <label for="password">Password</label>
-                <input type="password" name="password">
-                </div>
-                <div class="form-flex-child">
-                <input type="submit" value="Sign In" class="btn">
-                </div>
-            </form>
+      <% if (locals.messages.errors) { %> 
+        <% messages.errors.forEach( el => { %>
+          <div class="alert alert-danger"><%= el.msg %></div>
+        <% }) %> 
+      <% } %> 
+      <% if (locals.messages.info) { %> 
+        <% messages.info.forEach( el => { %>
+          <div class="alert alert-info"><%= el.msg %></div>
+        <% }) %> 
+      <% } %>
+      <form action="/login" method="POST">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"
+            >Email address</label
+          >
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            name="email"
+          />
         </div>
-    </main>
-    <%- include('partials/footer') -%>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+            name="password"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </section>
+  </div>
+</main>
+
+<%- include('partials/footer') -%>
