@@ -1,13 +1,44 @@
 <%- include('partials/header') -%>
-<div class="container">
-  <div class="row mt-5">
-      <div class="col-6">
+<div class="d-sm-flex row align-items-center">
+  <div class="container">
+      <div >
           <div>
-              <img class="img-thumbnail w-50" src="images/lost.png">
-              <p><strong>User Name</strong>: <%= user.userName %></p>
-              <p><strong>Email</strong>: <%= user.email %></p>
+              <img class="img-thumbnail w-25" src="images/lost.png">
           </div>
           <div class="mt-5">
+            <p><strong>User Name</strong>: <%= user.userName %></p>
+              <p><strong>Email</strong>: <%= user.email %></p>
+          </div>
+      </div>
+      <div class="mt-5">
+        <h2>Edit your Profile</h2>
+      </div>
+        <form action="/post/createPost" enctype="multipart/form-data" method="POST">
+          <div class="mb-3">
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Select your former industry</option>
+              <option value="1">Communications/Marketing</option>
+              <option value="2">Construction/Automotive/Manufacturing</option>
+              <option value="3">Education</option>
+              <option value="3">Education</option>
+              <option value="3">Education</option>
+              <option value="3">Education</option>
+              <option value="3">Education</option>
+              <option value="3">Education</option>
+              <option value="3">Education</option>
+              <option value="3">Education</option>
+              <option value="3">Education</option>
+              <option value="3">Education</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="goal" class="form-label">Milestone Goal</label>
+            <input for="text" class="form-control" id="goal" name="title">
+          </div>
+          <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+        </form>
+
+          <!-- <div class="mt-5">
             <h2>Add a post</h2>
             <form action="/post/createPost" enctype="multipart/form-data" method="POST">
               <div class="mb-3">
@@ -35,7 +66,8 @@
             </a>
           </li>
         <% } %>
-        </ul>
+        </ul> -->
+
         <div class="row justify-content-center mt-5">
           <a class="btn btn-primary mb-3" href="/feed">Return to Feed</a>
           <a href="/logout" class="col-4 btn btn-primary">Logout</a>
