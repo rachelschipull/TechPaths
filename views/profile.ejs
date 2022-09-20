@@ -15,25 +15,25 @@
       </div>
         <form action="/post/createPost" enctype="multipart/form-data" method="POST">
           <div class="mb-3">
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" aria-label="Default select example" id="industry" name="industry" required>
               <option selected>Select your former industry</option>
-              <option value="1">Communications/Marketing</option>
-              <option value="2">Construction/Automotive/Manufacturing</option>
-              <option value="3">Education</option>
-              <option value="3">Education</option>
-              <option value="3">Education</option>
-              <option value="3">Education</option>
-              <option value="3">Education</option>
-              <option value="3">Education</option>
-              <option value="3">Education</option>
-              <option value="3">Education</option>
-              <option value="3">Education</option>
-              <option value="3">Education</option>
+              <option value="Communications/Marketing">Communications/Marketing</option>
+              <option value="Construction/Automotive/Manufacturing">Construction/Automotive/Manufacturing</option>
+              <option value="Education">Education</option>
+              <option value="Engineering/Oil & Energy">Engineering/Oil & Energy</option>
+              <option value="Finance/Accounting">Finance/Accounting</option>
+              <option value="Government/Military">Government/Military</option>
+              <option value="Healthcare">Healthcare</option>
+              <option value="Hospitality">Hospitality</option>
+              <option value="Human Services/NonProfits">Human Services/NonProfits</option>
+              <option value="Logistics/Supply Chain/Shipping">Logistics/Supply Chain/Shipping</option>
+              <option value="Sales/Retail/Real Estate">Sales/Retail/Real Estate</option>
+              <option value="Other">Other</option>
             </select>
           </div>
           <div class="mb-3">
             <label for="goal" class="form-label">Milestone Goal</label>
-            <input for="text" class="form-control" id="goal" name="title">
+            <input for="text" class="form-control" id="goal" name="goal" required>
           </div>
           <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
         </form>
@@ -69,7 +69,7 @@
         </ul> -->
 
         <div class="row justify-content-center mt-5">
-          <a class="btn btn-primary mb-3" href="/feed">Return to Feed</a>
+          <!-- <a class="btn btn-primary mb-3" href="/feed">Return to Feed</a> -->
           <a href="/logout" class="col-4 btn btn-primary">Logout</a>
         </div>  
       </div>  
