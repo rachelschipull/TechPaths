@@ -1,22 +1,29 @@
 <%- include('partials/header') -%>
-<div class="d-sm-flex row align-items-center">
+<div class="d-sm-flex row align-items-center justify-content-center">
   <div class="container">
-      <div >
+    <div>
+        <img class="img-thumbnail w-25" src="images/lost.png">
+    </div>
+    <div class="mt-5">
+      <p><strong>User Name</strong>: <%= user.userName %></p>
+        <p><strong>Email</strong>: <%= user.email %></p>
+    </div>
+    <ul class="row list-unstyled">
+      <% for(var i=0; i<posts.length; i++) {%>
+        <li class="col-6 justify-content-between mt-5">
           <div>
-              <img class="img-thumbnail w-25" src="images/lost.png">
-          </div>
-          <div class="mt-5">
-            <p><strong>User Name</strong>: <%= user.userName %></p>
-              <p><strong>Email</strong>: <%= user.email %></p>
-          </div>
+            <p>Former Industry: <%= posts[i].industry %></p>
+            <p>Next Milestone Goal: <%= posts[i].goal %></p>
+          </div> 
+        </li>
+      <% } %>
+      </ul>
       </div>
       <div class="mt-5">
         <h2>Edit your Profile</h2>
       </div>
-      <div>
-        <p>Former Industry: <%= post.industry %></p>
-        <p>Next Milestone Goal: <%= post.goal %></p>
-      </div> 
+      
+      
         <form action="/post/createPost/" method="POST">
           <div class="mb-3">
             <select class="form-select" aria-label="Default select example" id="industry" name="industry" required>

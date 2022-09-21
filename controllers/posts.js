@@ -5,7 +5,7 @@ module.exports = {
   getProfile: async (req, res) => {
     try {
       const posts = await Post.find({ user: req.user.id });
-      res.render("profile.ejs", { posts: posts, user: req.user });
+      res.render("profile.ejs", { posts: posts, user: req.user, industry: req.body.industry, goal: req.body.goal });
     } catch (err) {
       console.log(err);
     }
@@ -21,7 +21,7 @@ module.exports = {
   getPost: async (req, res) => {
     try {
       const post = await Post.findById(req.params.id);
-      res.render("post.ejs", { post: post, user: req.user });
+      res.render("post.ejs", { post: post, user: req.user, industry: req.body.industry, goal: req.body.goal });
     } catch (err) {
       console.log(err);
     }
