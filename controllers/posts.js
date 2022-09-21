@@ -1,11 +1,12 @@
 // const cloudinary = require("../middleware/cloudinary");
 const Post = require("../models/Post");
+const User = require("../models/User");
 
 module.exports = {
   getProfile: async (req, res) => {
     try {
       const posts = await Post.find({ user: req.user.id });
-      res.render("profile.ejs", { posts: posts, user: req.user, industry: req.body.industry, goal: req.body.goal });
+      res.render("profile.ejs", { posts: posts, user: req.user });
     } catch (err) {
       console.log(err);
     }
@@ -35,6 +36,19 @@ module.exports = {
       });
       console.log("Post has been added!");
       res.redirect("/profile");
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  updateUser: async(req, res) => {
+    try {
+      await User.findOneAndUpdate(
+        { _id: req.params.id},
+        {
+          industry: req.body.industry, 
+          goal: req.body.goal
+        },
+      )
     } catch (err) {
       console.log(err);
     }

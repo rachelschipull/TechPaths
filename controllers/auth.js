@@ -87,6 +87,8 @@ exports.postSignup = (req, res, next) => {
   const user = new User({
     userName: req.body.userName,
     email: req.body.email,
+    industry: req.body.industry,
+    goal: req.body.goal,
     password: req.body.password,
   });
 
