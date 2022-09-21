@@ -13,7 +13,11 @@
       <div class="mt-5">
         <h2>Edit your Profile</h2>
       </div>
-        <form action="/post/createPost" enctype="multipart/form-data" method="POST">
+      <div>
+        <p>Former Industry: <%= post.industry %></p>
+        <p>Next Milestone Goal: <%= post.goal %></p>
+      </div> 
+        <form action="/post/createPost/" method="POST">
           <div class="mb-3">
             <select class="form-select" aria-label="Default select example" id="industry" name="industry" required>
               <option selected>Select your former industry</option>
