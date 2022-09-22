@@ -48,7 +48,9 @@ module.exports = {
           industry: req.body.industry, 
           goal: req.body.goal
         },
-      )
+      );
+      console.log("Profile has been updated");
+      res.redirect("/profile");
     } catch (err) {
       console.log(err);
     }
