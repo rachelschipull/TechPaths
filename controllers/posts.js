@@ -44,9 +44,10 @@ module.exports = {
     try {
       await User.findOneAndUpdate(
         { _id: req.params.id},
-        {
+        { $set: {
           industry: req.body.industry, 
           goal: req.body.goal
+        }
         },
       );
       console.log("Profile has been updated");
