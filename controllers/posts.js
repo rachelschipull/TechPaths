@@ -1,4 +1,5 @@
 // const cloudinary = require("../middleware/cloudinary");
+const Milestone = require("../models/Milestone");
 const Post = require("../models/Post");
 const User = require("../models/User");
 
@@ -6,7 +7,9 @@ module.exports = {
   getProfile: async (req, res) => {
     try {
       const posts = await Post.find({ user: req.user.id });
-      res.render("profile.ejs", { posts: posts, user: req.user });
+      const milestones = await Milestone.find({user: req.user.id})
+      console.log(milestones)
+      res.render("profile.ejs", { posts: posts, user: req.user, milestones: milestones});
     } catch (err) {
       console.log(err);
     }

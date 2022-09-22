@@ -5,6 +5,7 @@ module.exports = {
         console.log(req.user.name)
         try {
             await Milestone.create({
+                user: req.user.id,
                 year: req.body.year, 
                 category: req.body.category,
                 eventType: req.body.eventType, 
