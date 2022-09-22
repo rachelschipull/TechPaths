@@ -7,12 +7,12 @@ module.exports = {
             await Milestone.create({
                 year: req.body.year, 
                 category: req.body.category,
-                event: req.body.event, 
+                eventType: req.body.eventType, 
                 userNotes: req.body.userNotes,
-                status: 'public', 
+                status: 'Public', 
             })
             console.log('Milestone has been added!')
-            red.redirect('/profile')
+            res.redirect('/profile')
         } catch (err) {
             console.log(err)
         }

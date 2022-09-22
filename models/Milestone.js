@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const MilestoneSchema = new mongoose.Schema({
   year: {
-    type: String,
+    type: Number,
     required: true,
   },
   category: {
@@ -18,8 +18,8 @@ const MilestoneSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    default: 'public',
-    enum: ['public', 'private']
+    default: 'Public',
+    enum: ['Public', 'Private']
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,
