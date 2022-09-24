@@ -1,5 +1,7 @@
 <%- include('partials/header') -%>
 <main class="bg-dark text-light p-3 text-center text-sm-start">
+
+    <!-- Header/intro -->
     <section>
         <div class="container">
             <div class="d-sm-flex align-items-center p-3 justify-content-between">
@@ -15,9 +17,13 @@
             </div>
         </div>
     </section>
+
+    <!-- Divider -->
     <section>
         <img src="images/separator.png" alt="pink and purple line" class="img-fluid">
     </section>
+
+    <!-- Three Cards -->
     <section>
         <section class="p-5">
             <div class="container">
@@ -29,12 +35,12 @@
                                     <i class="bi bi-laptop"></i>
                                 </div>
                                 <h3 class="card-title mb-3">
-                                    Join TechPaths
+                                    View the Paths
                                 </h3>
                                 <p class="card-text">
-                                    Build your own tech path, add milestones, share any part you want to the main feed to inspire others along their way. Track your journey through tech and keep notes and memories on your private page.
+                                    Need inspiration for your own career? Want to see the typical timeline to learn a new language or skill? How long did it take for someone from your industry to get their first tech job? View our feed of TechPaths.
                                 </p>
-                                <a href="/signup" class="btn btn-info">Join In</a>
+                                <a href="/signup" class="btn btn-info">View Paths</a>
                             </div>
                         </div>
                     </div>
@@ -45,12 +51,12 @@
                                     <i class="bi bi-power"></i>
                                 </div>
                                 <h3 class="card-title mb-3">
-                                    View the Paths
+                                    Join TechPaths
                                 </h3>
                                 <p class="card-text">
-                                    Need inspiration for your own career? Want to see the typical timeline to learn a new language or skill? How long did it take for someone from your industry to get their first tech job? View our feed of TechPaths.
+                                    Build your own tech path, add milestones, share any part you want to the main feed to inspire others along their way. Track your journey through tech and keep notes and memories on your private page.
                                 </p>
-                                <a href="#" class="btn btn-primary">View Paths</a>
+                                <a href="#" class="btn btn-primary">Join In</a>
                             </div>
                         </div>
                     </div>
@@ -64,7 +70,7 @@
                                     Career Motivation
                                 </h3>
                                 <p class="card-text">
-                                    Pay transparency is the future and the future is NOW. View our evergrowing table of crowdsourced stats showing the percent increase of income for career changers to tech roles. Sound like you? Add your stats!
+                                    Pay transparency is the future and the future is NOW. View our ever-growing table of crowd-sourced stats showing the percent increase of income for career changers to tech roles. Sound like you? Add your stats!
                                 </p>
                                 <a href="http://career-motivation.herokuapp.com" class="btn btn-info">Get Motivated</a>
                             </div>
@@ -74,22 +80,75 @@
             </div>
         </section>
     </section>
-    <div class="container d-sm-flex align-items-center justify-content-between">
-        <div class="container">
-        <div class="site-logo">
-            <img src="images/MapPath.png" alt="Music Rating App Logo">
+
+    <!-- Testimonials -->
+    <section class="p-5 bg-light">
+        <div id="carouselMultiItemExample" class="carousel slide text-center" data-mdb-ride="carousel">
+            <!-- Inner -->
+            <div class="carousel-inner py-4">
+                <!-- Single item -->
+                <div class="carousel-item active">
+                <div class="container">
+                    <div class="row">
+                    <div class="col-lg-4 text-primary">
+                        <img class="rounded-circle shadow-1-strong mb-4"
+                        src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp" alt="avatar"
+                        style="width: 150px;" />
+                        <h5 class="mb-3">Anna Deynah</h5>
+                        <p>UX Designer</p>
+                        <p class="text-muted">
+                        <i class="fas fa-quote-left pe-2"></i>
+                        TechPaths helped me stay on track to complete my training in UX, and navigate my way to my first full-time role in tech. I love the design of the product too!
+                        </p>
+                    </div>
+                    
+                    <div class="col-lg-4 d-none d-lg-block text-primary">
+                        <img class="rounded-circle shadow-1-strong mb-4"
+                        src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(32).webp" alt="avatar"
+                        style="width: 150px;" />
+                        <h5 class="mb-3">John Doe</h5>
+                        <p>Software Engineer</p>
+                        <p class="text-muted">
+                        <i class="fas fa-quote-left pe-2"></i>
+                        After my bootcamp, I needed a way to keep motivated to find a job. TechPaths kept me tracking accomplishments and I also had another things to show employers when the time was right.
+                        </p>
+                    </div>
+                    
+                    <div class="col-lg-4 d-none d-lg-block text-primary">
+                        <img class="rounded-circle shadow-1-strong mb-4"
+                        src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp" alt="avatar"
+                        style="width: 150px;" />
+                        <h5 class="mb-3">Maria Kate</h5>
+                        <p>Product Lead</p>
+                        <p class="text-muted">
+                        <i class="fas fa-quote-left pe-2"></i>
+                        I did a few traditional CS classes and then dropped out of college. TechPaths helped me see that there's not just one right way into tech. We all have our own unique TechPath. 
+                    </p>
+                    </div>
+                </div>
+                </div>
             </div>
-        
-        </div>
-        <div>
-            <h1>Welcome to TechPaths</h1>
-            <div class="align-items-center justify-content-between m-4">
-                <a href="/login" class="btn btn-primary">Login</a>
-                <a href="/signup" class="btn btn-primary">Sign Up</a>
             </div>
-            <h5>Begin your TechPath now!</h5>
+            <!-- Inner -->
         </div>
+        <!-- Carousel wrapper -->
+</section>
+<section class="container d-sm-flex">
+    <div class="container d-flex justify-content-center align-items-center">
+            <div class="site-logo">
+                <img src="images/MapPath.png" alt="Music Rating App Logo">
+            </div>
+            <div class="align-items-center">
+                <h1>TechPaths for you and your career.</h1>
+                <div class="m-4">
+                    <a href="/login" class="btn btn-primary">Login</a>
+                    <a href="/signup" class="btn btn-primary">Sign Up</a>
+                </div>
+                <h5>Begin your TechPath now!</h5>
+            </div>
     </div>
+</section>
+
 </main>
     
 
