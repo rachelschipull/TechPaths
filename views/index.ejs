@@ -1,4 +1,4 @@
-<%- include('partials/header') -%>
+<%- include('partials/header', {user: user}) -%>
 <main class="bg-dark text-light p-3 text-center text-sm-start">
 
     <!-- Header/intro -->
@@ -40,7 +40,7 @@
                                 <p class="card-text">
                                     Need inspiration for your own career? Want to see the typical timeline to learn a new language or skill? How long did it take for someone from your industry to get their first tech job? View our feed of TechPaths.
                                 </p>
-                                <a href="/signup" class="btn btn-info">View Paths</a>
+                                <a href="/feed" class="btn btn-info">View Paths</a>
                             </div>
                         </div>
                     </div>
@@ -56,7 +56,7 @@
                                 <p class="card-text">
                                     Build your own tech path, add milestones, share any part you want to the main feed to inspire others along their way. Track your journey through tech and keep notes and memories on your private page.
                                 </p>
-                                <a href="#" class="btn btn-primary">Join In</a>
+                                <a href="/signup" class="btn btn-primary">Join In</a>
                             </div>
                         </div>
                     </div>
@@ -133,7 +133,7 @@
         </div>
         <!-- Carousel wrapper -->
 </section>
-<section class="container d-sm-flex">
+<section class="container d-sm-flex mt-5">
     <div class="container d-flex justify-content-center align-items-center">
             <div class="site-logo">
                 <img src="images/MapPath.png" alt="Music Rating App Logo">

@@ -7,8 +7,9 @@ exports.getLogin = (req, res) => {
     return res.redirect("/profile");
   }
   res.render("login", {
-    title: "Login",
-  });
+    title: "Login", user: req.user
+  }
+  );
 };
 
 exports.postLogin = (req, res, next) => {
