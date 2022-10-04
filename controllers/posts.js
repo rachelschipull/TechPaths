@@ -49,7 +49,7 @@ module.exports = {
         { _id: req.params.id},
         { $set: {
           industry: req.body.industry, 
-          goal: req.body.goal
+          goal: req.body.goal,
         }
         },
       );
