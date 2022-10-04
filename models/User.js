@@ -6,6 +6,10 @@ const UserSchema = new mongoose.Schema({
   email: { type: String, unique: true },
   industry: { type: String,required: true },
   goal: { type: String, required: true },
+  image: {type: String},
+  cloudinaryId: {type: String},
+  github: {type: String},
+  linkedin: {type: String},
   password: String,
 });
 
