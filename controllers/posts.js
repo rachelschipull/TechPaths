@@ -25,7 +25,7 @@ module.exports = {
   getPost: async (req, res) => {
     try {
       const post = await Post.findById(req.params.id);
-      res.render("post.ejs", { post: post, user: req.user, industry: req.body.industry, goal: req.body.goal });
+      res.render("post.ejs", { post: post, user: req.user, industry: req.body.industry, goal: req.body.goal, github: req.body.github, linkedin: req.body.linkedin });
     } catch (err) {
       console.log(err);
     }
@@ -50,6 +50,8 @@ module.exports = {
         { $set: {
           industry: req.body.industry, 
           goal: req.body.goal,
+          github: req.body.github,
+          linkedin: req.body.linkedin
         }
         },
       );

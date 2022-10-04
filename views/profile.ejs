@@ -1,16 +1,18 @@
 <%- include('partials/header', {user: user}) -%>
 <!-- Profile -->
 <section class="container">
-<div class="d-sm-flex row align-items-center justify-content-center">
-  <div class="container mt-5">
+<div class="container">
+  <div class="container mt-5 d-sm-flex row align-items-center justify-content-center">
     <div>
         <img class="img-thumbnail w-25" src="images/lost.png">
     </div>
     <div class="mt-5">
-      <p><strong>User Name</strong>: <%= user.userName %></p>
+        <p><strong>User Name</strong>: <%= user.userName %></p>
         <p><strong>Email</strong>: <%= user.email %></p>
         <p><strong>Former Industry</strong>: <%= user.industry %></p>
         <p><strong>Next Milestone Goal</strong>: <%= user.goal %></p>
+        <p><strong>GitHub</strong>: <a href="<%= user.github %>" target="_blank"><%= user.github %></a></p>
+        <p><strong>LinkedIn</strong>: <a href="<%= user.linkedin %>" target="_blank"><%= user.linkedin %></a></p>
     </div>
       <div class="mt-5">
         <h2>Edit your Profile</h2>
@@ -36,6 +38,14 @@
           <div class="mb-3">
             <label for="goal" class="form-label">Milestone Goal</label>
             <input for="text" class="form-control" id="goal" name="goal" required>
+          </div>
+          <div class="mb-3">
+            <label for="github" class="form-label">GitHub Link</label>
+            <input for="text" class="form-control" id="github" name="github" required>
+          </div>
+          <div class="mb-3">
+            <label for="linkedin" class="form-label">LinkedIn Link</label>
+            <input for="text" class="form-control" id="linkedin" name="linkedin" required>
           </div>
           <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
         </form>
@@ -92,7 +102,7 @@
         </div>
        <div class="mb-3">
         <label for="userNotes" class="form-label">Add details about the event here,i.e. which job, which language, which podcast or project.</label>
-        <textarea id="userNotes" name="userNotes" rows="3" col="50">Say more!</textarea>
+        <textarea id="userNotes" name="userNotes" rows="3" col="50">...</textarea>
       </div>
       <div class="mb-3">
         <label for="status" class="form-label">Make visible on public feed.</label>
