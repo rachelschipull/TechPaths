@@ -75,8 +75,6 @@ exports.postSignup = async (req, res, next) => {
     validationErrors.push({
       msg: "Password must be at least 8 characters long",
     });
-  // if (!validator.isURL(req.body.github))
-  //   validationErrors.push({msg: "Please enter a complete URL"})
   if (req.body.password !== req.body.confirmPassword)
     validationErrors.push({ msg: "Passwords do not match" });
 

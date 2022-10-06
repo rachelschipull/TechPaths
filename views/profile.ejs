@@ -41,11 +41,13 @@
           </div>
           <div class="mb-3">
             <label for="github" class="form-label">GitHub Link</label>
-            <input for="text" class="form-control" id="github" name="github" required>
+            <input for="url" class="form-control" id="github" name="github" pattern="https://.*" required>
+            <div id="gitHelp" class="form-text">Please include "https://" prefix.</div>
           </div>
           <div class="mb-3">
             <label for="linkedin" class="form-label">LinkedIn Link</label>
-            <input for="text" class="form-control" id="linkedin" name="linkedin" required>
+            <input for="url" class="form-control" id="linkedin" name="linkedin" pattern="https://.*" required>
+            <div id="liHelp" class="form-text">Please include "https://" prefix.</div>
           </div>
           <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
         </form>
