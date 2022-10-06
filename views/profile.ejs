@@ -125,7 +125,7 @@
     </div>
     <div class="card mb-2">
       <% for (let i=0; i<milestones.length; i++) { %>
-      <div class="card-header">
+      <div class="card-header text-light <%= if (milestones[i].category === 'Education') { bg-primary } else if (milestones[i].catergory === 'Experience') { bg-info } else if (milestones[i].category === 'Community') { bg-success } else { bg-warning } %>">
         <%= milestones[i].year %> - <%= milestones[i].category %>
       </div>
       <div class="card-body">
