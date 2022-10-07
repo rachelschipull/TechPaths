@@ -99,26 +99,26 @@ exports.postSignup = async (req, res, next) => {
 
   });
 
-  try {
-    // Upload image to cloudinary
-    const result = await cloudinary.uploader.upload(req.file.path);
+  // try {
+  //   // Upload image to cloudinary
+  //   const result = await cloudinary.uploader.upload(req.file.path);
 
-    await User.create({
-      userName: req.body.userName,
-      email: req.body.email,
-      industry: req.body.industry,
-      goal: req.body.goal,
-      image: result.secure_url,
-      cloudinaryId: result.public_id,
-      password: req.body.password,
-      github: req.body.github,
-      linkedin: req.body.linkedin,
-    });
-    console.log("Post has been added!");
-    res.redirect("/profile");
-  } catch (err) {
-    console.log(err);
-  }
+  //   await User.create({
+  //     userName: req.body.userName,
+  //     email: req.body.email,
+  //     industry: req.body.industry,
+  //     goal: req.body.goal,
+  //     image: result.secure_url,
+  //     cloudinaryId: result.public_id,
+  //     password: req.body.password,
+  //     github: req.body.github,
+  //     linkedin: req.body.linkedin,
+  //   });
+  //   console.log("Post has been added!");
+  //   res.redirect("/profile");
+  // } catch (err) {
+  //   console.log(err);
+  // }
 
 
   User.findOne(
