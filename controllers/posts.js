@@ -16,9 +16,11 @@ module.exports = {
   },
   getDashboard: async (req, res) => {
     try {
-      const posts = await Post.find({ user: req.user.id });
-      const milestones = await Milestone.find({user: req.user.id}).sort({ year: "asc"}).lean();
-      res.render("dashboard.ejs", { posts: posts, user: req.user, milestones: milestones});
+      const user = await User.findById(req.params.id);
+      const milestones = await Milestone.find({user: req.params.id}).sort({ year: "asc"}).lean();
+      res.render("dashboard.ejs", { user: user, milestones: milestones});
+      console.log(user)
+      console.log(req.params._id)
     } catch (err) {
       console.log(err);
     }

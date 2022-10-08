@@ -5,7 +5,7 @@ const postsController = require("../controllers/posts");
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 //Post Routes - simplified for now
-router.get("/:id", ensureAuth, postsController.getPost);
+router.get("/:id", postsController.getPost);
 
 router.post("/createPost", ensureAuth, upload.single("file"), postsController.createPost);
 
