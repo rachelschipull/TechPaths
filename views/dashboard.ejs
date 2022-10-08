@@ -1,0 +1,55 @@
+<%- include('partials/header') -%>
+<!-- User info section -->
+<section class="container">
+    <div class="mb-3 d-sm-flex row align-items-center">
+        <div>
+            <img class="img-thumbnail w-25" src="images/lost.png">
+        </div>
+        <div class="mt-5">
+            <p><strong>User Name</strong>: <%= user.userName %></p>
+            <p><strong>Email</strong>: <%= user.email %></p>
+            <p><strong>Former Industry</strong>: <%= user.industry %></p>
+            <p><strong>Next Milestone Goal</strong>: <%= user.goal %></p>
+            <p><strong>GitHub</strong>: <a href="<%= user.github %>" target="_blank"><%= user.github %></a></p>
+            <p><strong>LinkedIn</strong>: <a href="<%= user.linkedin %>" target="_blank"><%= user.linkedin %></a></p>
+        </div>
+    </div>
+</section>
+<!-- Milestone render -->
+<section>
+    <div class="container">
+      <div class="mt-5">
+        <h2>Your TechPath</h2>
+      </div>
+      <div class="card mb-2">
+        <% for (let i=0; i<milestones.length; i++) { %>
+        <div class="card-header text-light 
+        <% if(milestones[i].category === 'Education') { %> 
+          bg-warning 
+          <% } else if (milestones[i].category === 'Community') { %> 
+            bg-success 
+          <% } else if (milestones[i].category === 'Employment') { %>
+            bg-primary
+         <% } else { %> 
+            bg-info 
+            <% } %> ">
+          <%= milestones[i].year %> - <%= milestones[i].category %>
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <p><%= milestones[i].eventType %></p>
+            <footer class="blockquote-footer"><%= milestones[i].userNotes %></footer>
+          </blockquote>
+        </div>
+        <% } %>
+      </div>
+    </div>
+
+    <div class="row justify-content-center mt-5">
+      <a class="btn btn-primary m-3 col-2" href="/feed">Return to Feed</a>
+      <a class="btn btn-primary m-3 col-2" href="/profile">Return to Profile</a>
+      <a href="/logout" class="col-2 btn btn-primary m-3">Logout</a>
+    </div>  
+
+  </section>
+<% include('partials/footer')-%>

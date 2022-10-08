@@ -14,6 +14,15 @@ module.exports = {
       console.log(err);
     }
   },
+  getDashboard: async (req, res) => {
+    try {
+      const posts = await Post.find({ user: req.user.id });
+      const milestones = await Milestone.find({user: req.user.id}).sort({ year: "asc"}).lean();
+      res.render("dashboard.ejs", { posts: posts, user: req.user, milestones: milestones});
+    } catch (err) {
+      console.log(err);
+    }
+  },
   getFeed: async (req, res) => {
     try {
       const posts = await Post.find().sort({ createdAt: "desc" }).lean();
@@ -24,8 +33,9 @@ module.exports = {
   },
   getPost: async (req, res) => {
     try {
-      const post = await Post.findById(req.params.id);
-      res.render("post.ejs", { post: post, user: req.user, industry: req.body.industry, goal: req.body.goal, github: req.body.github, linkedin: req.body.linkedin });
+      const posts = await Post.find({ user: req.user.id });
+      const milestones = await Milestone.find({user: req.user.id}).sort({ year: "asc"}).lean();
+      res.render("public.ejs", { posts: posts, user: req.user, industry: req.body.industry, goal: req.body.goal, github: req.body.github, linkedin: req.body.linkedin, milestones: milestones });
     } catch (err) {
       console.log(err);
     }
