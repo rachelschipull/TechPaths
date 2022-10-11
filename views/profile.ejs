@@ -1,122 +1,66 @@
 <%- include('partials/header', {user: user}) -%>
 <!-- Profile -->
+<section class="p-3 text-small-start">
+  <div class="container">
+    <h1>Your Profile</h1>
+    <div class="d-sm-flex row align-items-center">
+      <img class="img-thumbnail w-25" src="images/lost.png">
+      <div class="mt-5 w-50">
+          <p><strong>User Name</strong>: <%= user.userName %></p>
+          <p><strong>Email</strong>: <%= user.email %></p>
+          <p><strong>Former Industry</strong>: <%= user.industry %></p>
+          <p><strong>Next Milestone Goal</strong>: <%= user.goal %></p>
+          <p><strong>GitHub</strong>: <a href="<%= user.github %>" target="_blank"><%= user.github %></a></p>
+          <p><strong>LinkedIn</strong>: <a href="<%= user.linkedin %>" target="_blank"><%= user.linkedin %></a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Edit Profile -->
 <section class="container">
-<div class="container">
-  <div class="container mt-5 d-sm-flex row align-items-center justify-content-center">
-    <div>
-        <img class="img-thumbnail w-25" src="images/lost.png">
-    </div>
-    <div class="mt-5">
-        <p><strong>User Name</strong>: <%= user.userName %></p>
-        <p><strong>Email</strong>: <%= user.email %></p>
-        <p><strong>Former Industry</strong>: <%= user.industry %></p>
-        <p><strong>Next Milestone Goal</strong>: <%= user.goal %></p>
-        <p><strong>GitHub</strong>: <a href="<%= user.github %>" target="_blank"><%= user.github %></a></p>
-        <p><strong>LinkedIn</strong>: <a href="<%= user.linkedin %>" target="_blank"><%= user.linkedin %></a></p>
-    </div>
+  <div>
       <div class="mt-5">
         <h2>Edit your Profile</h2>
       </div>
-        <form action="/post/updateUser/<%= user._id %>?_method=PUT" method="POST">
-          <div class="mb-3">
-            <select class="form-select" aria-label="Default select example" id="industry" name="industry" required>
-              <option selected>Select your former industry</option>
-              <option value="Communications/Marketing">Communications/Marketing</option>
-              <option value="Construction/Automotive/Manufacturing">Construction/Automotive/Manufacturing</option>
-              <option value="Education">Education</option>
-              <option value="Engineering/Oil & Energy">Engineering/Oil & Energy</option>
-              <option value="Finance/Accounting">Finance/Accounting</option>
-              <option value="Government/Military">Government/Military</option>
-              <option value="Healthcare">Healthcare</option>
-              <option value="Hospitality">Hospitality</option>
-              <option value="Human Services/NonProfits">Human Services/NonProfits</option>
-              <option value="Logistics/Supply Chain/Shipping">Logistics/Supply Chain/Shipping</option>
-              <option value="Sales/Retail/Real Estate">Sales/Retail/Real Estate</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-          <div class="mb-3">
-            <label for="goal" class="form-label">Milestone Goal</label>
-            <input for="text" class="form-control" id="goal" name="goal" required>
-          </div>
-          <div class="mb-3">
-            <label for="github" class="form-label">GitHub Link</label>
-            <input for="url" class="form-control" id="github" name="github" pattern="https://.*" required>
-            <div id="gitHelp" class="form-text">Please include "https://" prefix.</div>
-          </div>
-          <div class="mb-3">
-            <label for="linkedin" class="form-label">LinkedIn Link</label>
-            <input for="url" class="form-control" id="linkedin" name="linkedin" pattern="https://.*" required>
-            <div id="liHelp" class="form-text">Please include "https://" prefix.</div>
-          </div>
-          <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
-        </form>
-    </div>
-  </div>
-</section>
-<!-- Milestone form -->
-<section>
-  <div class="container">
-    <div class="mt-5">
-      <h2>Enter your Milestones</h2>
-    </div>
-      <form action="/milestones/createMilestone/:id" method="POST">
+      <form action="/post/updateUser/<%= user._id %>?_method=PUT" method="POST">
         <div class="mb-3">
-          <label for="year" class="form-label">Year of Event</label>
-          <input type="number" id="year" name="year" min="1999" max="2023" required>
-        </div>
-        <div class="mb-3">
-          <label for="category" class="form-label">Choose Milestone Category</label>
-          <select class="custom-select" id="category" name="category" required>
-            <option selected>Select Category</option>
-            <option value="Employment">Employment</option>
+          <select class="form-select" aria-label="Default select example" id="industry" name="industry" required>
+            <option selected>Select your former industry</option>
+            <option value="Communications/Marketing">Communications/Marketing</option>
+            <option value="Construction/Automotive/Manufacturing">Construction/Automotive/Manufacturing</option>
             <option value="Education">Education</option>
-            <option value="Recognition">Recognition</option>
-            <option value="Community">Community</option>
+            <option value="Engineering/Oil & Energy">Engineering/Oil & Energy</option>
+            <option value="Finance/Accounting">Finance/Accounting</option>
+            <option value="Government/Military">Government/Military</option>
+            <option value="Healthcare">Healthcare</option>
+            <option value="Hospitality">Hospitality</option>
+            <option value="Human Services/NonProfits">Human Services/NonProfits</option>
+            <option value="Logistics/Supply Chain/Shipping">Logistics/Supply Chain/Shipping</option>
+            <option value="Sales/Retail/Real Estate">Sales/Retail/Real Estate</option>
+            <option value="Other">Other</option>
           </select>
         </div>
         <div class="mb-3">
-          <label for="eventType" class="form-label">Choose specific event to track -- make sure it matches your category!</label>
-          <select class="custom-select" id="eventType" name="eventType" required>
-            <option selected>Select the Event Type</option>
-            <option value="I got my first job in tech!">I got my first job in tech!</option>
-            <option value="I left my job in my former industry.">I left my job in my former industry.</option>
-            <option value="I got promoted.">I got promoted.</option>
-            <option value="I got a new job in tech.">I got a new job in tech.</option>
-            <option value="I got laidoff/fired.">I got laidoff/fired.</option>
-            <option value="I had my first tech interview.">I had my first tech interview.</option>
-            <option value="I signed my first freelance project/contract.">I signed my first freelance project/contract.</option>
-            <option value="I started learning a new programming language.">I started learning a new programming language.</option>
-            <option value="I finished first project in new programming language.">I finished first project in new programming language.</option>
-            <option value="I started a coding bootcamp or training program.">I started a coding bootcamp or training program.</option>
-            <option value="I graduated from bootcamp!">I graduated from bootcamp!</option>
-            <option value="I started a college-level Computer Science course.">I started a college-level Computer Science course.</option>
-            <option value="I completed a college-level Computer Science course.">I completed a college-level Computer Science course.</option>
-            <option value="I dropped out of college.">I dropped out of college.</option>
-            <option value="A major concept clicked for me!">A major concept clicked for me!</option>
-            <option value="I spoke at a conference.">I spoke at a conference.</option>
-            <option value="I received an award or recognition.">I received an award or recognition.</option>
-            <option value="I received a certificate.">I received a certificate (like Scrum Certified).</option>
-            <option value="I spoke on a tech podcast.">I spoke on a tech podcast.</option>
-            <option value="I contributed to Open Source.">I contributed to Open Source.</option>
-            <option value="I volunteered as a developer for a grassroots project.">I volunteered as a developer for a grassroots project.</option>
-          </select>
+          <label for="goal" class="form-label">Milestone Goal</label>
+          <input for="text" class="form-control" id="goal" name="goal" required>
         </div>
-       <div class="mb-3">
-        <label for="userNotes" class="form-label">Add details about the event here,i.e. which job, which language, which podcast or project.</label>
-        <textarea id="userNotes" name="userNotes" rows="3" col="50">...</textarea>
-      </div>
-      <div class="mb-3">
-        <label for="status" class="form-label">Make visible on public feed.</label>
-        <select class="custom-select" id="status" name="status">
-          <option value="Public" selected>Public</option>
-          <option value="Private">Private</option>
-        </select>
-      </div>
-      <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+        <div class="mb-3">
+          <label for="github" class="form-label">GitHub Link</label>
+          <input for="url" class="form-control" id="github" name="github" pattern="https://.*" required>
+          <div id="gitHelp" class="form-text">Please include "https://" prefix.</div>
+        </div>
+        <div class="mb-3">
+          <label for="linkedin" class="form-label">LinkedIn Link</label>
+          <input for="url" class="form-control" id="linkedin" name="linkedin" pattern="https://.*" required>
+          <div id="liHelp" class="form-text">Please include "https://" prefix.</div>
+        </div>
+        <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
       </form>
-  </div>
+
+    </div>
 </section>
+
 <!-- Milestone render -->
 <section>
   <div class="container">
@@ -147,38 +91,73 @@
     </div>
   </div>
 </section>
-          <!-- <div class="mt-5">
-            <h2>Add a post</h2>
-            <form action="/post/createPost" enctype="multipart/form-data" method="POST">
-              <div class="mb-3">
-                  <label for="title" class="form-label">Title</label>
-                  <input type="text" class="form-control" id="title" name="title">
-              </div>
-              <div class="mb-3">
-                <label for="caption" class="form-label">Caption</label>
-                <textarea class="form-control" id="caption" name="caption"></textarea>
-              </div>
-              <div class="mb-3">
-                <label for="imgUpload" class="form-label">Image</label>
-                <input type="file" class="form-control" id="imageUpload" name="file">
-              </div>
-              <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
-            </form>
-          </div>
-      </div>
-      <div class="col-6">
-        <ul class="row list-unstyled">
-        <% for(var i=0; i<posts.length; i++) {%>
-          <li class="col-6 justify-content-between mt-5">
-            <a href="/post/<%= posts[i]._id%>">
-              <img class="img-fluid" src="<%= posts[i].image%>">
-            </a>
-          </li>
-        <% } %>
-        </ul> -->
 
+<!-- Milestone form -->
+<section>
+  <div class="container">
+    <div class="mt-5">
+      <h2>Enter a New Milestone</h2>
+    </div>
+    <form action="/milestones/createMilestone/:id" method="POST">
+      <div class="mb-3">
+        <label for="year" class="form-label">Year of Event</label><br>
+        <input type="number" id="year" name="year" min="1999" max="2023" required>
+      </div>
+      <div class="mb-3">
+        <label for="category" class="form-label">Choose Milestone Category</label><br>
+        <select class="custom-select" id="category" name="category" required>
+          <option selected>Select Category</option>
+          <option value="Employment">Employment</option>
+          <option value="Education">Education</option>
+          <option value="Recognition">Recognition</option>
+          <option value="Community">Community</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="eventType" class="form-label">Choose specific event to track -- make sure it matches your category!</label><br>
+        <select class="custom-select" id="eventType" name="eventType" required>
+          <option selected>Select the Event Type</option>
+          <option value="I got my first job in tech!">I got my first job in tech!</option>
+          <option value="I left my job in my former industry.">I left my job in my former industry.</option>
+          <option value="I got promoted.">I got promoted.</option>
+          <option value="I got a new job in tech.">I got a new job in tech.</option>
+          <option value="I got laidoff/fired.">I got laidoff/fired.</option>
+          <option value="I had my first tech interview.">I had my first tech interview.</option>
+          <option value="I signed my first freelance project/contract.">I signed my first freelance project/contract.</option>
+          <option value="I started learning a new programming language.">I started learning a new programming language.</option>
+          <option value="I finished first project in new programming language.">I finished first project in new programming language.</option>
+          <option value="I started a coding bootcamp or training program.">I started a coding bootcamp or training program.</option>
+          <option value="I graduated from bootcamp!">I graduated from bootcamp!</option>
+          <option value="I started a college-level Computer Science course.">I started a college-level Computer Science course.</option>
+          <option value="I completed a college-level Computer Science course.">I completed a college-level Computer Science course.</option>
+          <option value="I dropped out of college.">I dropped out of college.</option>
+          <option value="A major concept clicked for me!">A major concept clicked for me!</option>
+          <option value="I spoke at a conference.">I spoke at a conference.</option>
+          <option value="I received an award or recognition.">I received an award or recognition.</option>
+          <option value="I received a certificate.">I received a certificate (like Scrum Certified).</option>
+          <option value="I spoke on a tech podcast.">I spoke on a tech podcast.</option>
+          <option value="I contributed to Open Source.">I contributed to Open Source.</option>
+          <option value="I volunteered as a developer for a grassroots project.">I volunteered as a developer for a grassroots project.</option>
+        </select>
+      </div>
+      <div class="mb-3">
+      <label for="userNotes" class="form-label">Add details about the event here, i.e. which job, which language, which podcast or project:</label> <br>
+      <textarea id="userNotes" name="userNotes" rows="3" col="100"></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="status" class="form-label">Make visible on public feed.</label>
+      <select class="custom-select" id="status" name="status">
+        <option value="Public" selected>Public</option>
+        <option value="Private">Private</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+    </form>
+  </div>
+</section>
+
+<!-- Bottom buttons -->
         <div class="row justify-content-center mt-5">
-          <a class="btn btn-primary m-3 col-2" href="/feed">Return to Feed</a>
           <a class="btn btn-primary m-3 col-2" href="/dashboard/<%= user._id %>">Public Profile</a>
           <a class="col-2 btn btn-primary m-3" href="/logout" >Logout</a>
         </div>  
@@ -187,6 +166,3 @@
   </div>
 </div>
 <%- include('partials/footer') -%>
-
-<!-- for later
-   %= if (milestones[i].category === 'Education') { bg-primary } else if (milestones[i].catergory === 'Experience') { bg-info } else if (milestones[i].category === 'Community') { bg-success } else { bg-warning } %>" -->
