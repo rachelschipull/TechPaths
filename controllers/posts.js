@@ -101,4 +101,14 @@ module.exports = {
       res.redirect("/profile");
     }
   },
+  deleteMilestone: async (req, res) => {
+    try {
+    let post = await Milestone.findById({_id: req.params.id})    
+    await Milestone.remove({ _id: req.params.id});
+    console.log('Deleted Milestone');
+    res.redirect('/profile');
+    } catch (err) {
+        res.redirect('/profile')
+    }
+  },
 };
