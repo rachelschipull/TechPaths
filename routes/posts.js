@@ -13,6 +13,6 @@ router.put("/likePost/:id", postsController.likePost);
 
 router.put("/updateUser/:id", ensureAuth, postsController.updateUser);
 
-router.delete("deleteMilestone/:id", postsController.deleteMilestone)
+router.delete("/deleteMilestone/:id", postsController.deleteMilestone)
 
 module.exports = router;
