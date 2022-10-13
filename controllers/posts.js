@@ -60,10 +60,9 @@ module.exports = {
       await User.findOneAndUpdate(
         { _id: req.params.id},
         { $set: {
-          industry: req.body.industry, 
           goal: req.body.goal,
           github: req.body.github,
-          linkedin: req.body.linkedin
+          linkedin: req.body.linkedin,
         }
         },
       );

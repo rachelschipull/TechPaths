@@ -25,37 +25,18 @@
       </div>
       <form action="/post/updateUser/<%= user._id %>?_method=PUT" method="POST">
         <div class="mb-3">
-          <select class="form-select" aria-label="Default select example" id="industry" name="industry" required>
-            <option selected>Select your former industry</option>
-            <option value="Communications/Marketing">Communications/Marketing</option>
-            <option value="Construction/Automotive/Manufacturing">Construction/Automotive/Manufacturing</option>
-            <option value="Education">Education</option>
-            <option value="Engineering/Oil & Energy">Engineering/Oil & Energy</option>
-            <option value="Finance/Accounting">Finance/Accounting</option>
-            <option value="Government/Military">Government/Military</option>
-            <option value="Healthcare">Healthcare</option>
-            <option value="Hospitality">Hospitality</option>
-            <option value="Human Services/NonProfits">Human Services/NonProfits</option>
-            <option value="Logistics/Supply Chain/Shipping">Logistics/Supply Chain/Shipping</option>
-            <option value="Sales/Retail/Real Estate">Sales/Retail/Real Estate</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-        <div class="mb-3">
           <label for="goal" class="form-label">Milestone Goal</label>
           <input for="text" class="form-control" id="goal" name="goal" required>
         </div>
-        <div class="mb-3">
           <label for="github" class="form-label">GitHub Link</label>
           <input for="url" class="form-control" id="github" name="github" pattern="https://.*" required>
           <div id="gitHelp" class="form-text">Please include "https://" prefix.</div>
         </div>
-        <div class="mb-3">
           <label for="linkedin" class="form-label">LinkedIn Link</label>
           <input for="url" class="form-control" id="linkedin" name="linkedin" pattern="https://.*" required>
           <div id="liHelp" class="form-text">Please include "https://" prefix.</div>
         </div>
-        <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+        <button type="submit" class="btn btn-primary" value="Upload">Update</button>
       </form>
 
     </div>
@@ -159,7 +140,7 @@
         <option value="Private">Private</option>
       </select>
     </div>
-    <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+    <button type="submit" class="btn btn-primary" id="career" value="Upload">Submit</button>
     </form>
   </div>
 </section>
@@ -173,4 +154,26 @@
     </div>
   </div>
 </div>
+
+<!-- Modal code-al -->
+
+<div class="modal fade" id="career" tabindex="-1" aria-labelledby="careerLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="careerLabel">Congratulations!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <p class="lead">Starting your first job in tech? Add your stats to Career Motivation!</p>
+      <p>Join a list of crowd-sourced, anonymous career changers and share your salary statistics.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" href="https://career-motivation.herokuapp.com/">Visit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <%- include('partials/footer') -%>
