@@ -9,7 +9,7 @@ Users can grab their public profile link to share their TechPath with the world!
 ### Optimization will include:
 - User profile pic (updatable)
 - Ability to search for other user from your former industry
-- New home of Career Motivation stats
+- New home of Career Motivation
 
 ### Visit the deployed site:
 [Visit TechPaths](http://tech-paths.herokuapp.com/) http://tech-paths.herokuapp.com/
