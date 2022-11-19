@@ -3,7 +3,7 @@
 
 ### Track your TechPath and learn from others too!
 Allows users to login, set up a profile, and track their path through their tech career.
-Targeted at career changers, all users will choose a former industry, and next milestone goal to start their TechPath.
+Targeted at career changers, all users will choose a former industry and first milestone goal to start their TechPath.
 Users can grab their public profile link to share their TechPath with the world!
 
 ### Optimization will include:
