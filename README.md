@@ -12,7 +12,7 @@ Users can grab their public profile link to share their TechPath with the world!
 - New home of Career Motivation
 
 ### Visit the deployed site:
-[Visit TechPaths](http://tech-paths.herokuapp.com/) http://tech-paths.herokuapp.com/
+[Visit TechPaths](https://techpaths.cyclic.app/) https://techpaths.cyclic.app/
 
 ### To run:
 Make sure you have Sass installed.
@@ -23,4 +23,4 @@ Add .env under config folder with
 PORT = 'your preferred local host port'
 DB_STRING = 'mongodb database string'
 
-Use "npm start" to run locally with nodemon.
+Use "node server.js" to run locally, nodemon has been disabled, but you may enable in your own environment if you wish by changing the script.
